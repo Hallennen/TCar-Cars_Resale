@@ -1,0 +1,91 @@
+h1{
+    color: pink
+}
+
+header{
+    margin: -8px;
+}
+
+
+nav {
+    background-color: #0096c7;
+    color: #fff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #32bbe8;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+    text-align: center;
+    padding: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #e3e1e1;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: border-bottom-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom-color: #e3e1e1;
+}
+
+button[type="submit"] {
+    background-color: #046282;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #108eb8;
+}
+
+
+footer {
+
+    background-color: #ccc;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+    position: static;
+
+}

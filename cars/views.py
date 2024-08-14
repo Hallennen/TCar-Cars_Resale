@@ -7,7 +7,7 @@ from cars import models
 
 def cars_views(request):
 
-    cars = models.car.objects.all()
+    cars = models.car.objects.all().order_by('model')
 
     search= request.GET.get('search')
 
@@ -17,9 +17,15 @@ def cars_views(request):
     if len(cars) == 0:
         cars = models.car.objects.all()
 
-
     
     return render(request,
             'cars.html',
             {'cars': cars}
             )
+
+
+def new_car_view(request):
+       
+    
+    return render(request,
+                  'new_car.html' )
