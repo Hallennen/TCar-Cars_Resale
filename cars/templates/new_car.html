@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
+{% block title %} 
+
+    <title>New Car</title>
+    <link rel="stylesheet" href="../../static/cars/new_car.css">
+
+{% endblock %}
 
 {% block content %}
     <form method="POST", enctype="multipart/form-data">
-        <input type="date" name="" id="">
-    
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}}
+        </table>
+        <button type="submit">Cadastrar</button>
     </form>
 
 
