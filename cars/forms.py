@@ -1,16 +1,24 @@
 from django import forms
-from cars.models import Brand, car
+from cars.models import car
 
-class CarForm(forms.Form):
-        model = forms.CharField(max_length=10)
-        brand = forms.ModelChoiceField(Brand.objects.all())
-        factory_year = forms.IntegerField()
-        model_year = forms.IntegerField()
-        plate = forms.CharField(max_length=10)
-        value = forms.FloatField()
-        photo = forms.ImageField()
+class CarModelform(forms.ModelForm):
+        class Meta:
+                model = car
+                fields = '__all__'
+
+
+        def clean_value(self):
+                value = self.cleaned_data.get('value')
+                if value < 6000:
+                        self.add_error('value','Valor minimo de R$ 6.000, para cadastro de veiculos.') 
+                return value
         
-    
 
 
+# class UserModelform(forms.ModelForm):
+#         class Meta:
 
+
+class Login_user(forms.Form):
+        user = forms.EmailInput()
+        password = forms.PasswordInput()
