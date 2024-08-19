@@ -17,7 +17,8 @@
             <ul>
                 <li><a href="{% url 'cars_list' %}">Carros</a></li>
                 <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
-                <li><a href="{% url 'new_user' %}">Cadastro User</a></li>
+                <li><a href="{% url 'register' %}">Cadastro User</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
             </ul>
             <form method="GET" action="{% url 'cars_list' %}">
                 <input type="text" name="search" placeholder="Buscar carro...">

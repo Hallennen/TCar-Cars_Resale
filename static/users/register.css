@@ -1,0 +1,17 @@
+
+.box{
+    padding: 0px 10%;
+    text-align: left;
+    font-size: 22px;
+}
+
+
+form.form_users{
+    display: flex;
+    flex-direction: column;
+
+}
+
+div{
+    padding: 4px;
+}

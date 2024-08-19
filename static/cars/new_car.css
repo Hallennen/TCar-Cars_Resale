@@ -10,8 +10,10 @@ table{
     width: 40%;
     line-height: 2em ;
 }
-form{
+.new_car_form{
     font-size: 18px;
+    display: flex;
+    flex-direction: row;
 }
 
 input#id_factory_year,#id_model_year,#id_value,#id_plate,#id_model{

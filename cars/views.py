@@ -41,13 +41,3 @@ def new_car_view(request):
                   'new_car.html',
                   {'form': form_new_car }
                   )
-
-
-
-def new_user_view(request):
-    # form_user = forms.Login_user()
-
-    return render(request,
-                  'new_user.html',
-                #   {'form_new_user': form_user },
-                  ) 

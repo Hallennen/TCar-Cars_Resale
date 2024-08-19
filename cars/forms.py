@@ -15,10 +15,9 @@ class CarModelform(forms.ModelForm):
         
 
 
-# class UserModelform(forms.ModelForm):
-#         class Meta:
 
-
-class Login_user(forms.Form):
+class LoginUser(forms.Form):
         user = forms.EmailInput()
         password = forms.PasswordInput()
+        teste = 'pla'
+
