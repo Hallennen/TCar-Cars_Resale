@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../static/cars/base.css">
+        <link rel="stylesheet" href="../../static/base.css">
         {% block title %}
 
         {% endblock %}
@@ -15,18 +15,28 @@
     <header>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
+                    <li class="btn_user">Olá {{ user.username }}</li>
+                    <li><a href="{% url 'register' %}">Cadastro User</a></li>
+                    <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
+                    
+                {% endif %}
+
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+
                 <li><a href="{% url 'cars_list' %}">Carros</a></li>
-                <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
-                <li><a href="{% url 'register' %}">Cadastro User</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
+                {% if user.is_authenticated %}
+                    <li class="btn-sair"><a href=" {% url 'logout' %}">Sair</a></li>
+                    
+                {% endif %}
+
             </ul>
-            <form method="GET" action="{% url 'cars_list' %}">
-                <input type="text" name="search" placeholder="Buscar carro...">
-                <button type="submit">Buscar</button>
-            </form>
-          </nav>
-    </header>
-    
+        </nav>
+
+
+    </header>    
     
     <body>
         {% block content %}

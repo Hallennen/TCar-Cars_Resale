@@ -13,12 +13,12 @@ nav {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -26,6 +26,11 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+}
+
+.btn_user{
+    position: absolute;
+    left: 0;
 }
 
 nav ul li a {
@@ -40,44 +45,10 @@ nav ul li a:hover {
     background-color: #32bbe8;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4px;
-    text-align: center;
-    padding: 20px;
+.btn-sair{
+    position: absolute;
+    right: 0;
 }
-
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #e3e1e1;
-    border-radius: 4px;
-    margin-right: 10px;
-    transition: border-bottom-color 0.3s ease-in-out;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-bottom-color: #e3e1e1;
-}
-
-button[type="submit"] {
-    background-color: #046282;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-button[type="submit"]:hover {
-    background-color: #108eb8;
-}
-
 
 footer {
 
