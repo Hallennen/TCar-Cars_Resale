@@ -16,8 +16,3 @@ class CarModelform(forms.ModelForm):
 
 
 
-class LoginUser(forms.Form):
-        user = forms.EmailInput()
-        password = forms.PasswordInput()
-        teste = 'pla'
-

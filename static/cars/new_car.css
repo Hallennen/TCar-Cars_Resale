@@ -4,7 +4,20 @@ body{
     justify-content: center;
 
 }
+
+form{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
 table{
+    text-align:left;
     border: 1PX, SOLID rgba(178, 176, 176, 0.747);
     padding: 1rem;
     width: 40%;

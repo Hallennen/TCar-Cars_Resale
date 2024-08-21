@@ -11,6 +11,6 @@ urlpatterns = [
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
     path('logout/', logout_views, name='logout'),
-    path('cars/', views.cars_views, name='cars_list'),
-    path('new_car/', views.new_car_view, name= 'new_car'),
+    path('cars/', views.CarListView.as_view(), name='cars_list'),
+    path('new_car/', views.NewCarCreateView.as_view(), name= 'new_car'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

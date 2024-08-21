@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    <link rel="stylesheet" href="../../static/users/login.css">
+{% endblock %}
+
 {% block content %}
 
     <form method="POST">
@@ -8,5 +12,7 @@
             {{ login_form.as_table }}
         </table>
         <button type="submit">Entrar</button>
+        
+        <a href="{% url 'register' %}">Registrar-me</a>
     </form>
 {% endblock %}
