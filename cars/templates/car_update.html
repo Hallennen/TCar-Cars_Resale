@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block title %} 
+    <link rel="stylesheet" href="{% static 'cars/update.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit" class="btn">Salvar Alteração</button>
+    </form>
+    <div class="buttons">
+            <a href="{% url 'delete_car' object.pk  %}"><button type='submit' class='btn-deletar' type="submit">Deletar Carro</button></a>
+            <a href="{% url 'detail_car' object.pk  %}"><button class='btn'>Cancelar</button></a>
+        </div>
+     
+{% endblock %}

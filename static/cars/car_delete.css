@@ -1,0 +1,55 @@
+
+.box-info{
+    margin-top: 1% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.buttons{
+
+    align-content: center;
+    margin-bottom: 8px ;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+
+button {
+    background-color: #046282;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #108eb8;
+}
+
+button.btn-cancelar {
+    background-color: #b10300f6;
+    color: #fff;
+    border: none;
+    margin-bottom: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.btn-cancelar:hover {
+    background-color: #df2e2e;
+}

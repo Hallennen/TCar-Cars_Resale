@@ -20,5 +20,5 @@ class car(models.Model):
     photo = models.ImageField(upload_to= 'cars/', blank=True, null=True)
 
     def __str__(self):
-        return self.model
+        return self.plate    
     

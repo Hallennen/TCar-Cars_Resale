@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>TCar - Delete </title>
+    <link rel="stylesheet" href="/static/cars/car_delete.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="titulo">
+    <div class='box-info'>
+        
+        <h1>Deletar Carro</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Você tem certeza que deseja deletar o carro: {{ object.model}}  ?</h2>
+            <div class="buttons">
+                <button class='btn-deletar' type="submit">Deletar Carro</button>
+            </div>
+        </form>
+        <a class href="{% url 'detail_car' object.pk  %}"><button class='btn-cancelar'>Cancelar</button></a>
+    </div>
+</div>
+
+{% endblock %}

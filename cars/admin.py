@@ -3,7 +3,7 @@ from cars.models import car , Brand
 
 # Register your models here.
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('model', 'brand', 'factory_year', 'model_year', 'value')
+    list_display = ('model', 'brand', 'factory_year', 'model_year', 'plate', 'value')
     search_fields = ('model', 'brand')
 
 admin.site.register(car, CarAdmin)

@@ -1,0 +1,72 @@
+form{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+table{
+    text-align:left;
+    border: 1PX, SOLID rgba(178, 176, 176, 0.747);
+    padding: 1rem;
+    width: 40%;
+    line-height: 2em ;
+}
+.new_car_form{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+}
+
+input#id_factory_year,#id_model_year,#id_value,#id_plate,#id_model{
+    padding: 5px;
+    margin: 0px 10px 0px 10px;
+    background: #ffffff;
+    border: 1PX, SOLID rgb(162, 162, 162);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{
+    margin-bottom: 8px;
+}
+
+button.btn {
+    margin: 8px 0px 0px 0px;
+    background-color: #046282;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.btn:hover {
+    background-color: #108eb8;
+}
+
+button.btn-deletar {
+    background-color: #b10300f6;
+    color: #fff;
+    border: none;
+    margin-bottom: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.btn-deletar:hover {
+    background-color: #df2e2e;
+}
+
