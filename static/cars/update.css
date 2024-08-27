@@ -62,6 +62,7 @@ button.btn-deletar {
     margin-bottom: 8px;
     font-size: 16px;
     border-radius: 4px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }

@@ -29,6 +29,7 @@ button {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    margin-bottom: 5px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -51,4 +52,18 @@ button.btn-excluir {
 
 button.btn-excluir:hover {
     background-color: #df2e2e;
+}
+
+
+.car-card:hover {
+    color:pink;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top: 3%;
+    padding:2px ;
+    margin-bottom: 5%;
+     */
 }

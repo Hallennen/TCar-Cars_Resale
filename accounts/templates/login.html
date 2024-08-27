@@ -5,14 +5,16 @@
 {% endblock %}
 
 {% block content %}
-
-    <form method="POST">
-        {% csrf_token %}
-        <table>
-            {{ login_form.as_table }}
-        </table>
-        <button type="submit">Entrar</button>
-        
-        <a href="{% url 'register' %}">Registrar-me</a>
-    </form>
+    <div class="conteiner">
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <table>
+                {{ login_form.as_table }}
+            </table>
+            <button type="submit">Entrar</button>
+            
+            <a href="{% url 'register' %}">Registrar-me</a>
+        </form>
+    </div>
 {% endblock %}
