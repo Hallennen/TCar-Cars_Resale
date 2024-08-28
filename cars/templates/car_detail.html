@@ -8,13 +8,22 @@
 {% block content %}
 
     <div class="car-grid">
-        <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }} " title="{{ object.model }} - {{ object.brand }}">
+        {% if object.photo %}
+            <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }} " title="{{ object.model }} - {{ object.brand }}">
+        {% else %}
+            <img src="/media/padrao.jpg"> 
+        {% endif %}
+
         <div class="infor">
             <h2><strong> {{ object.brand }} -  {{ object.model }}</strong></h2>
             <p><strong> Ano de Fabricação:</strong> {{ object.factory_year }} </p>
             <p><strong> Ano de modelo:</strong> {{ object.model_year }} </p>
             <p><strong> Placa: </strong> {{ object.plate }} </p>
             <p><strong> Valor de compra: </strong>  R$ {{ object.value }} </p>
+            {% if object.bio %}
+                <p><strong> Bio: </strong> {{ object.bio }} </p>
+            {% endif %}
+
             {% if user.is_authenticated %}
                 <a href="{% url 'update_car' object.pk %}"><button>editar</button></a>
                 <a href="{% url 'delete_car' object.pk %}"><button class="btn-excluir">excluir</button></a>

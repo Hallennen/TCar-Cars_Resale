@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 def register_view(request):
 
     if request.method == "POST":
-        user_form = UserCreationForm(request.POST) 
+        user_form = UserCreationForm(request.POST)
         if user_form.is_valid():
             user_form.save()
             return redirect('login')

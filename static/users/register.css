@@ -3,6 +3,8 @@
     padding: 0px 10%;
     text-align: left;
     font-size: 22px;
+    background: rgb(243, 218, 218);
+    width: 70%;
 }
 
 
@@ -10,6 +12,10 @@ form.form_users{
     display: flex;
     flex-direction: column;
 
+}
+
+button{
+    width: 10%;
 }
 
 div{

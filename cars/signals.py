@@ -16,47 +16,54 @@ def car_invetory_update():
     )
 
 
+@receiver(pre_save,sender=car)
+def pre_save(sender, instance, **kwargs):
+    if not instance.bio:
+        instance.bio = f'''{instance.model} - {instance.brand} ano {instance.factory_year}, é um veiculo de consumo baixo por kilometragem, excelente para uso na cidade para passeios.
+                Oportunidade única para aquisição, pelo valor de R$ {instance.value} 
+            '''
+
 
 
 # se acrescentar o created no parametro, verifica se é criação ou update
 
 @receiver(post_save,sender= car)
-def car_post_save(sender, instance, **kwargs):
+def car_post_save(sender, created, instance, **kwargs):
     car_invetory_update()
 
+    if created:
+        corpo_email= f"""
+        <h1> Um novo carro foi cadastrado na sua revenda. </h1> 
+        <p> O veiculo: <strong>{instance.model}</strong> foi cadastrado.  </p>
+        <p> Marca: <strong>{instance.brand}</strong></p>
+        <p> Placa: <strong>{instance.plate}</strong></p>
+        <p> Valor: <strong>{instance.value}</strong></p>
 
-    corpo_email= f"""
-    <h1> Um novo carro foi cadastrado na sua revenda. </h1> 
-    <p> O veiculo: <strong>{instance.model}</strong> foi cadastrado.  </p>
-    <p> Marca: <strong>{instance.brand}</strong></p>
-    <p> Placa: <strong>{instance.plate}</strong></p>
-    <p> Valor: <strong>{instance.value}</strong></p>
+        """
 
-    """
-
-    message = email.message.Message()
-    message["Subject"] = "Novo cadastro - TCAR"
-    message["From"] = "hallennenm@gmail.com"
-    message["To"] = "hallennen.marinho3@gmail.com"
-    password = "yryfxqhznnwnaatk"
-    message.add_header('Content-Type', 'text/html')
-    message.set_payload(corpo_email)
-    
-    # creates SMTP session
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    # start TLS for security
-    s.starttls()
-    # Authentication
-    s.login(message["From"], password)
-    # sending the mail
-    s.sendmail(message["From"], message["To"], message.as_string().encode('utf-8'))
-    # terminating the session
-    s.quit()
-
-
+        message = email.message.Message()
+        message["Subject"] = "Novo cadastro - TCAR"
+        message["From"] = "hallennenm@gmail.com"
+        message["To"] = "hallennen.marinho3@gmail.com"
+        password = "yryfxqhznnwnaatk"
+        message.add_header('Content-Type', 'text/html')
+        message.set_payload(corpo_email)
+        
+        # creates SMTP session
+        s = smtplib.SMTP('smtp.gmail.com', 587)
+        # start TLS for security
+        s.starttls()
+        # Authentication
+        s.login(message["From"], password)
+        # sending the mail
+        s.sendmail(message["From"], message["To"], message.as_string().encode('utf-8'))
+        # terminating the session
+        s.quit()
 
 
-    return print('email enviado para:' , message["To"] )
+
+
+        return print('email enviado para:' , message["To"] )
 
 
 
