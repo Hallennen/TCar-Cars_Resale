@@ -19,7 +19,7 @@
             <ul>
                 {% if user.is_authenticated %}
                     <li class="btn_user">Olá {{ user.username }}</li>
-                    <li><a href="{% url 'register' %}">Cadastro User</a></li>
+                    <li><a href="{% url 'register' %}">Cadastrar User</a></li>
                     <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
                     
                 {% endif %}
