@@ -12,15 +12,21 @@ def register_view(request):
         pessoal_form = UserModelForms(request.POST)
         print(request.POST)
 
-        if user_form.is_valid():
+        if user_form.is_valid() and pessoal_form.is_valid():
+            print('aqui ok')
             user_form.save()
+            print('aqui ok')
             pessoal_form.save()
             return redirect('login')
+        else:
+            form_error = True
+            user_form.add_error('password2','Verifique o formulario preenchido')
+            return render(request, 'register.html', {'user':{'user_form': user_form},'pessoal':{'pessoal_form': pessoal_form}, 'error':{'error': form_error} })
+        
         
     else:
         user_form = UserCreationForm()
         pessoal_form = UserModelForms()
-        print('form_invalid')
         
     return render(request, 'register.html', {'user':{'user_form': user_form},'pessoal':{'pessoal_form': pessoal_form}})
 

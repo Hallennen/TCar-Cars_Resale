@@ -55,15 +55,9 @@ button.btn-excluir:hover {
 }
 
 
-.car-card:hover {
-    color:pink;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 70%;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    margin-top: 3%;
-    padding:2px ;
-    margin-bottom: 5%;
-     */
+.bio{
+    display: flex;
+    justify-content: center;
+    margin: 0% 5% 2% 5%
+
 }

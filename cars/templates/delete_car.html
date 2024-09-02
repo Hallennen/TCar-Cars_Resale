@@ -17,8 +17,8 @@
             <h2>Você tem certeza que deseja deletar o carro: {{ object.model}}  ?</h2>
             <div class="buttons">
                 <button class='btn-deletar' type="submit">Deletar Carro</button>
-            </div>
-        </form>
+            </form>
+        </div>
         <a class href="{% url 'detail_car' object.pk  %}"><button class='btn-cancelar'>Cancelar</button></a>
     </div>
 </div>

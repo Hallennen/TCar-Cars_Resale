@@ -21,12 +21,17 @@
             <p><strong> Placa: </strong> {{ object.plate }} </p>
             <p><strong> Valor de compra: </strong>  R$ {{ object.value }} </p>
             {% if object.bio %}
-                <p><strong> Bio: </strong> {{ object.bio }} </p>
+                <p class="bio"><strong> Bio: </strong> {{ object.bio }} </p>
             {% endif %}
 
             {% if user.is_authenticated %}
                 <a href="{% url 'update_car' object.pk %}"><button>editar</button></a>
                 <a href="{% url 'delete_car' object.pk %}"><button class="btn-excluir">excluir</button></a>
+            {% endif %}
+            {% if not user.is_authenticated %}
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=5511913671570&text=Olá,%20este%20veiculo%20ainda%20est%C3%A1%20disponivel?%0APossuo%20interesse!" >
+                    <Button class="button_negociar">Negociar com o vendedor!</Button>
+                </a>
             {% endif %}
         </div>
     </div>

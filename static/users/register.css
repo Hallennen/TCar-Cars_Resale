@@ -3,21 +3,118 @@
     padding: 0px 10%;
     text-align: left;
     font-size: 22px;
-    background: rgb(243, 218, 218);
-    width: 70%;
-}
-
-
-form.form-group{
+    margin: 1% 0%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+div.quadrado{
+    background: #b8b6b637;
+    padding: 1% 5% 3% 3%;
+    width: 70% ;
+    min-width: max-content;
+    border: 3px solid rgb(177, 173, 173);
+    border-radius: 25px;
+}
+
+.forms{
+    height: 60%;
+}
+
+/* div dados pessoais */
+
+.labels_pessoais{
+    text-align:left
+}
+
+.answer_pessoais{
+    margin-top: 15%;
+    line-height:33px
+}
+
+.input_answer{
+    margin: 5px;
 
 }
 
-button{
-    width: 10%;
+
+.input-p{
+    width: 5px;
 }
 
-div{
-    padding: 4px;
+
+
+
+
+
+.box-divs{
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+
+
+
+label{
+    margin:0px 30px;
+}
+
+
+
+
+
+
+
+.labels_login{
+    text-align:left ;
+    margin: 12px 5px 5px 0px;
+}
+
+
+
+input{
+    border: none;
+    border-bottom: 1px solid rgb(115, 115, 115);
+    padding: 5px;
+    margin: 3px;
+}
+
+
+
+
+
+/*  botão */
+
+input#button{
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1%;
+    padding: 1%;
+    width: 15%;
+    background-color: #046282;
+    min-width: max-content;
+}
+
+#button:hover{
+    cursor: pointer;
+    background-color: #108eb8;
+}
+
+
+.button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

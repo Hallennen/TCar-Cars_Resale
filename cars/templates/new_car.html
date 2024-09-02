@@ -7,12 +7,17 @@
 {% endblock %}
 
 {% block content %}
-    <form method="POST" enctype="multipart/form-data" class="new_car_form">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-            <br>
-        </table>
-        <button type="submit" >enviar</button>
-    </form>
+    <div class="box">
+        <form method="POST" enctype="multipart/form-data" class="new_car_form">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+                <br>
+            </table>
+            <!-- <button type="submit" >enviar</button> -->
+    </div>
+    <div class="button">
+        <input type="submit" value="Cadastrar" id="button"></input>
+        </form>
+    </div>
 {% endblock %}

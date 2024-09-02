@@ -8,28 +8,67 @@
 {% block content %}
 
     <div class="box">
-        <form method="POST" enctype="multipart/form-data" class="form_users">
-            {% csrf_token %}
+        <div class="quadrado">
+            <form method="POST" enctype="multipart/form-data" class="forms">
+                {% csrf_token %}
+                {% if error %}
+                    <h2> Verifique o formulario preenchido</h2>
+                {% endif%}
 
-            <p><h2>Dados Pessoais:</h2></p>
-            <table>
-                    {{pessoal.pessoal_form.as_table}}
-                    
-                    
-            </table>
-            
+                <p><h2>Dados Pessoais:</h2></p>
+                
+                <div class="box-divs">
+
+                    <div class="labels_pessoais">
+                        <label>Primeiro nome: </label><br>
+                        <label class="answer_pessoais">Último nome: </label><br>
+                        <label class="answer_pessoais">Data de Nascimento: </label><br>
+                        <label class="answer_pessoais">Estado: </label><br>
+                        <label class="answer_pessoais">Bairro: </label><br>
+                        <label class="answer_pessoais">Endereço: </label><br>
+                        <label class="answer_pessoais">DDD-Telefone: </label><br>
+                        <label class="answer_pessoais1">Telefone: </label>
+                    </div>
+
+                    <div class="inputs_answer">
+                        {{pessoal.pessoal_form.primeiro_nome}}<br>                    
+                        {{pessoal.pessoal_form.ultimo_nome}}<br>                
+                        {{pessoal.pessoal_form.data_nascimento}}<br>                     
+                        {{pessoal.pessoal_form.estado}}<br>                       
+                        {{pessoal.pessoal_form.bairro}}<br>                       
+                        {{pessoal.pessoal_form.endereço}}<br>                     
+                        {{pessoal.pessoal_form.ddd_telefone}}<br>                      
+                        {{pessoal.pessoal_form.telefone}}                       
+                        
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="box">  
+        <div class="quadrado">
             <p><h2>Dados de login:</h2></p>
-            <table>
-                <label>Username: </label>
+            <div class="box-divs">
+                <div class="labels_login">
+                    <label>Username: </label><br>
+                    <label class="answer">Senha: </label><br>
+                    <label class="answer">Redigite sua senha: </label>
+                </div>
+
+                
+                <div class="inputs_answer">
                     {{user.user_form.username}}<br>
-                <label>Senha: </label>
                     {{user.user_form.password1}}<br>
-                <label>Redigite sua senha: </label>
-                {{user.user_form.password2}}<br>
-            </table>
-            
-            <input type="submit" value="Cadastrar"></input>
-        </form>
+                    {{user.user_form.password2}}<br>
+                </div>
+                
+            </div>
+        </div>
+            <div class="button">
+                <input type="submit" value="Cadastrar" id="button"></input>
+            </div>
+            </form>
     </div>
 
 

@@ -25,6 +25,13 @@ nav ul li {
     margin: 0 15px;
 }
 
+li.img{
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    margin-top: -8px;
+}
+
 .btn_user{
     position: absolute;
     left: 0;

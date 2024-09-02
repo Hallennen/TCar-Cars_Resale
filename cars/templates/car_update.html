@@ -15,8 +15,8 @@
         <button type="submit" class="btn">Salvar Alteração</button>
     </form>
     <div class="buttons">
-            <a href="{% url 'delete_car' object.pk  %}"><button type='submit' class='btn-deletar' type="submit">Deletar Carro</button></a>
-            <a href="{% url 'detail_car' object.pk  %}"><button class='btn'>Cancelar</button></a>
-        </div>
+        <a href="{% url 'delete_car' object.pk  %}"><button type='submit' class='btn-deletar' type="submit">Deletar Carro</button></a>
+        <a href="{% url 'detail_car' object.pk  %}"><button class='btn'>Cancelar</button></a>
+    </div>
      
 {% endblock %}
