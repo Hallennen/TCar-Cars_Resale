@@ -1,5 +1,6 @@
+from typing import Any
 from django import forms
-from cars.models import car
+from cars.models import car, Brand
 from django.db.models.query import QuerySet
 
 class CarModelform(forms.ModelForm):
@@ -34,4 +35,22 @@ class CarModelUpdateForm(forms.ModelForm):
         class Meta:
                 model = car
                 fields = '__all__'
+
+
+
+
+class CarBrandForm(forms.ModelForm):
+        class Meta:
+                model = Brand
+                fields = '__all__'
+
+        def clean_name(self):
+                name = self.cleaned_data.get('name') 
+                names_brand = Brand.objects.filter(name= name)
+                if names_brand:
+                        self.add_error('name', 'Marca já cadastrada')
+                return name
+
+
+
         

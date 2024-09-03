@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Nova Marca</title>    
+    <link rel="stylesheet" href="/static/cars/new_brand.css">
+    {% endblock %}
+
+
+{% block content %}
+<div class="box">
+
+    <a class='voltar' href="{% url 'new_car' %}"><img src="/media/retornar.png" alt="" width="15px" height="15px" title="Voltar"> -- Voltar</a>
+    <div class="conteiner">
+        
+        <form method= 'POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <h1>Cadastrar nova marca</h1>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="Cadastrar" id="button">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -13,8 +13,10 @@ urlpatterns = [
     path('logout/', logout_views, name='logout'),
     path('cars/', views.CarListView.as_view(), name='cars_list'),
     path('new_car/', views.NewCarCreateView.as_view(), name= 'new_car'),
+    path('new_brand/', views.NewBrandCreateView.as_view(), name= 'new_brand'),
     path('car/detail/<int:pk>/', views.CarDetailView.as_view(), name='detail_car'),
     path('car/detail/<int:pk>/update/', views.CarUpdateView.as_view(), name='update_car'),
     path('car/detail/<int:pk>/delete/', views.CarDeleteView.as_view(), name='delete_car'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

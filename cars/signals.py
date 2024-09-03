@@ -59,12 +59,11 @@ def car_post_save(sender, created, instance, **kwargs):
             s.sendmail(message["From"], message["To"], message.as_string().encode('utf-8'))
             # terminating the session
             s.quit()
+
+            print('email enviado para:' , message["To"] )
     except:
         print('NÃO foi possivel enviar o email!')
 
-
-
-    return print('email enviado para:' , message["To"] )
 
 
 

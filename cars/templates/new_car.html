@@ -10,11 +10,12 @@
     <div class="box">
         <form method="POST" enctype="multipart/form-data" class="new_car_form">
             {% csrf_token %}
+            <a href="{%  url 'new_brand' %}">* NÃO encontrei uma marca</a>
             <table>
-                {{ form.as_table }}
+                    {{ form.as_table }}
                 <br>
+                <th class="mais_marca"><a href="{%  url 'new_brand' %}" title="Caso não encontre a marca, cadastre-a clicando aqui.">+Marca</a></th>
             </table>
-            <!-- <button type="submit" >enviar</button> -->
     </div>
     <div class="button">
         <input type="submit" value="Cadastrar" id="button"></input>
