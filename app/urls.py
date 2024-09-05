@@ -19,4 +19,4 @@ urlpatterns = [
     path('car/detail/<int:pk>/delete/', views.CarDeleteView.as_view(), name='delete_car'),
 
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
