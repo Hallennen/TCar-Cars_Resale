@@ -14,6 +14,17 @@ class CarModelform(forms.ModelForm):
                 if value < 6000:
                         self.add_error('value','Valor minimo de R$ 6.000, para cadastro de veiculos.') 
                 return value
+        
+
+        def clean_model_year(self):
+                factory_year = self.cleaned_data.get('factory_year')
+                print('fabricação_ano: ', factory_year)
+                model_year = self.cleaned_data.get('model_year')
+                print('modelo_ano: ', model_year)
+                if (model_year - factory_year ) > 1 or (model_year - factory_year) < 0:
+                        self.add_error('model_year','Verifique o ano do modelo em relação ao ano de Fabricação')
+                return factory_year
+                
 
         def clean_plate(self):
                 plate_input = self.cleaned_data.get('plate')
