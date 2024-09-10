@@ -10,11 +10,11 @@
     <div class="box">
         <form method="POST" enctype="multipart/form-data" class="new_car_form">
             {% csrf_token %}
-            <a href="{%  url 'new_brand' %}">* NÃO encontrei uma marca</a>
+            <a href="{%  url 'new_brand' %}">* NÃO encontrei uma marca</a> <a href="{%  url 'new_cor' %}">* NÃO encontrei uma cor</a>
             <table>
                     {{ form.as_table }}
                 <br>
-                <th class="mais_marca"><a href="{%  url 'new_brand' %}" title="Caso não encontre a marca, cadastre-a clicando aqui.">+Marca</a></th>
+                <th class="mais_marca"><a id="link" href="{%  url 'new_brand' %}" title="Caso não encontre a marca, cadastre-a clicando aqui.">+Marca</a>  |   <a id='link' href="{%  url 'new_cor' %}" title="Caso não encontre a cor, cadastre-a clicando aqui.">+Cor</a></th>
             </table>
     </div>
     <div class="button">

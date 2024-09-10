@@ -1,6 +1,6 @@
 from typing import Any
 from django import forms
-from cars.models import car, Brand
+from cars.models import car, Brand, CorCar
 from django.db.models.query import QuerySet
 
 class CarModelform(forms.ModelForm):
@@ -64,4 +64,9 @@ class CarBrandForm(forms.ModelForm):
 
 
 
+
+class Corform(forms.ModelForm):
+        class Meta:
+                model = CorCar
+                fields = '__all__'
         

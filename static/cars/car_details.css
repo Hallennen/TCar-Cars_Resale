@@ -1,11 +1,27 @@
 img{
-    width:90%;
+    width:85%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+div#voltar{
+    margin: 1% 1%;
+}
+
+img#voltar{
+    width:15px;
+    height: 15px;
+    box-shadow: none;
+}
+
+a.voltar{
+    margin-top: 1rem;
+    margin-left: 0px;
+}
+
+
 .car-grid {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 70%;
+    max-width: 65%;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -21,7 +37,32 @@ img{
     text-align: center;
     border-radius: 8px;
     padding: 1px;
+    margin-left: -1px;
 }
+
+
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    margin-left: 5%;
+    width: 90%;
+    background: rgb(246, 243, 243);
+    /* border: 1px solid black; */
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+
+.box{
+    border-radius: 10px;
+    border: 1px solid black;
+    background: rgb(246, 243, 243);
+    /* min-width: max-content; */
+    /* min-height: max-content; */
+
+}
+
+
 
 button {
     background-color: #046282;
@@ -59,5 +100,4 @@ button.btn-excluir:hover {
     display: flex;
     justify-content: center;
     margin: 0% 5% 2% 5%
-
 }

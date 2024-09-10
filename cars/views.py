@@ -39,7 +39,17 @@ class NewBrandCreateView(CreateView):
     success_url = '/new_car/'
     form_class = forms.CarBrandForm
 
-    
+@method_decorator(login_required(login_url='login'), name='dispatch')
+class NewCorCreateView(CreateView):
+    model= models.CorCar
+    template_name = 'new_cor.html'
+    success_url = '/new_car/'
+    form_class = forms.Corform
+
+
+
+
+
 
 class CarDetailView(DetailView):
     model = models.car

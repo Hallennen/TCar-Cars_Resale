@@ -6,6 +6,9 @@
 {% endblock %}
 
 {% block content %}
+    <div id='voltar'>
+        <a class='voltar' href="{% url 'cars_list' %}"><img id='voltar' src="/media/retornar.png" alt="" width="15px" height="15px" title="Voltar"> -- Voltar</a>
+    </div>
 
     <div class="car-grid">
         {% if object.photo %}
@@ -16,11 +19,40 @@
 
         <div class="infor">
             <h2><strong> {{ object.brand }} -  {{ object.model }}</strong></h2>
-            <p><strong> Ano de Fabricação:</strong> {{ object.factory_year }} </p>
-            <p><strong> Ano de modelo:</strong> {{ object.model_year }} </p>
-            <p><strong> Placa: </strong> {{ object.plate }} </p>
-            <p><strong> Valor de compra: </strong>  R$ {{ object.value }} </p>
-            {% if object.bio %}
+            <div class="boxes">
+                <div class="box">
+                    <h3><strong> Ano de Fabricação:</strong></h3> 
+                    <h4> {{ object.factory_year }} </h4>                     
+                </div>
+                <div class="box">
+                    <h3><strong> Ano do modelo:</strong></h3>
+                    <h4> {{ object.model_year }} </h4>
+
+                </div>
+                <div class="box">
+                    <h3><strong> Placa: </strong></h3> 
+                    <h4> {{ object.plate }} </h4>
+                </div>
+                <div class="box">
+                    <h3><strong> Valor de compra: </strong></h3> 
+                    <h4> R$ {{ object.value }} </h4>
+                </div>
+                <div class="box">
+                    <h3><strong> Cor: </strong></h3> 
+                    <h4> {{ object.cor }} </h4>
+                </div>
+                <div class="box">
+                    <h3><strong> Tração: </strong></h3> 
+                    <h4> {{ object.tracao }} </h4>
+                </div>
+            </div>
+
+
+
+
+
+
+                {% if object.bio %}
                 <p class="bio"><strong> Bio: </strong> {{ object.bio }} </p>
             {% endif %}
 
