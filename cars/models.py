@@ -11,7 +11,7 @@ class Brand(models.Model):
     def __str__(self) :
         return self.name    
     
-class TracaoCar(models.Model):
+class Tracao(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True)
     tracao_tipo = models.CharField(null= True, blank= True)
 
@@ -19,7 +19,7 @@ class TracaoCar(models.Model):
         return self.tracao_tipo
 
 
-class CorCar(models.Model):
+class Cor(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True)
     cor_name = models.CharField(null= True, blank= True)
 
@@ -36,8 +36,8 @@ class car(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand',  verbose_name = "Marca")
     factory_year = models.IntegerField(blank=True, null=True,  verbose_name = "Ano de Fabricação")
     model_year = models.IntegerField(blank=True, null=True,  verbose_name = "Ano do Modelo")
-    cor = models.ForeignKey(CorCar, on_delete=models.PROTECT , related_name='car_cor', null=True)
-    tracao = models.ForeignKey(TracaoCar, on_delete=models.PROTECT, related_name='car_tracao', verbose_name= 'Tração', null=True)
+    cor = models.ForeignKey(Cor, on_delete=models.PROTECT , related_name='car_cor', null=True)
+    tracao = models.ForeignKey(Tracao, on_delete=models.PROTECT, related_name='car_tracao', verbose_name= 'Tração', null=True)
     plate = models.CharField(max_length=10, blank=True, null=True,  verbose_name = "Placa")
     value = models.FloatField(blank=True, null=True,  verbose_name = "Valor")
     photo = models.ImageField(upload_to= 'cars/', blank=True, null=True,  verbose_name = "Foto")

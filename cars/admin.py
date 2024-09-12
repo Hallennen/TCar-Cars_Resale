@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cars.models import car , Brand, CorCar, TracaoCar
+from cars.models import car , Brand, Cor, Tracao
 
 # Register your models here.
 class CarAdmin(admin.ModelAdmin):
@@ -16,10 +16,10 @@ admin.site.register(Brand, BrandCar)
 class Cor_admin(admin.ModelAdmin):
     list_display = ('id', 'cor_name')
 
-admin.site.register(CorCar, Cor_admin)
+admin.site.register(Cor, Cor_admin)
 
 
-class Tracao(admin.ModelAdmin):
+class Tracao_admin(admin.ModelAdmin):
     list_display = ('id', 'tracao_tipo')
 
-admin.site.register(TracaoCar, Tracao)
+admin.site.register(Tracao, Tracao_admin)

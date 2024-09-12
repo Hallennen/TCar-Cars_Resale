@@ -41,7 +41,7 @@ class NewBrandCreateView(CreateView):
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class NewCorCreateView(CreateView):
-    model= models.CorCar
+    model= models.Cor
     template_name = 'new_cor.html'
     success_url = '/new_car/'
     form_class = forms.Corform
